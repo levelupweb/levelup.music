@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import propTypes from "prop-types";
+import Header from '../components/header/Header.js';
 import './RouteDefaultContainer.css';
 
 const RouteDefaultContainer = ({ component }) =>
@@ -8,8 +9,10 @@ const RouteDefaultContainer = ({ component }) =>
 		render={props => {
 			return (
 				<div className="DefaultContainer container">
-					Im In container
-					{React.createElement(component)}
+					<Header />
+					<div className="container-content">
+						{React.createElement(component)}
+					</div>
 				</div>
 			);
 		}}

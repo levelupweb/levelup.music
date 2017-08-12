@@ -1,0 +1,20 @@
+p.primary {
+	font-size:19px;
+	color:rgba(0,0,0,0.8);
+	padding:0px;
+	margin:0px;
+	margin-bottom:15px;
+}
+@media screen and (max-width: 768px) {
+	p.primary {
+		font-size:16px;
+	}
+}
+.spacing {
+	font-size:13px;
+	margin:0px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding:0px;
+	vertical-align: middle;
+}
