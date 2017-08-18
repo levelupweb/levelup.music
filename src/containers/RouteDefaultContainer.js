@@ -7,8 +7,7 @@ const RouteDefaultContainer = ({ component }) =>
 	<Route
 		render={props => {
 			return (
-				<div className="DefaultContainer container">
-					Im In container
+				<div className="DefaultContainer">
 					{React.createElement(component)}
 				</div>
 			);
