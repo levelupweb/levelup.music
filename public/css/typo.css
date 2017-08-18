@@ -7,11 +7,19 @@ p.primary {
 }
 @media screen and (max-width: 768px) {
 	p.primary {
+<<<<<<< HEAD
 		font-size:18px;
 	}
 }
 .spacing {
 	font-size:90%;
+=======
+		font-size:16px;
+	}
+}
+.spacing {
+	font-size:13px;
+>>>>>>> b8554f3a8368109e8209cd108b6e793412214281
 	margin:0px;
 	letter-spacing: 2px;
 	text-transform: uppercase;

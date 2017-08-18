@@ -1,0 +1,109 @@
+.jumbotron {
+	width:100%;
+}
+.jumbotron-title .title,
+.jumbotron-title img {
+	display:inline;
+	vertical-align: middle;
+}
+.jumbotron-title img {
+	margin-right:15px;
+	width:65px;
+	height:65px;
+}
+.jumbotron-title {
+	margin-bottom:15px!important;
+}
+@media screen and (max-width:992px) {
+	.jumbotron-title img {
+		width:60px;
+		height:60px;
+	}
+}
+@media screen and (max-width:576px) {
+	.jumbotron-title img {
+		width:40px;
+		height:40px;
+	}
+}
+.jumbotron-actions {
+	margin-top:30px;
+}
+.stages {
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	width:100%;
+	margin-bottom:50px;
+}
+.stages .stage {
+	position: relative;
+	border:1px solid #000;
+	width:60px;
+	height:60px;
+	border-radius:100%;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	margin-left:70px;
+}
+.stages .stage:before {
+	content: '';
+	width:70px;
+	height:1px;
+	background: #c0c0c0;
+	position: absolute;
+	right:100%;
+	top:50%;
+}
+.stages .stage .title {
+	position: absolute;
+	right:100%;
+	margin-right:18px;
+	top:50%;
+	margin-top:-25px;
+}
+.stages .stage:nth-child(2) {
+	width:80px;
+	height:80px;
+}
+.stages .stage:nth-child(3) {
+	width:90px;
+	height:90px;
+}
+.stages .stage:nth-child(4) {
+	width:110px;
+	height:110px;
+}
+.stages .stage.primary {
+	background:#0012ff;
+	border:1px solid #fff;
+}
+.stages .stage.primary .count {
+	color:#fff;
+}
+.advantages {
+	display:flex;
+	align-items:stretch;
+	flex-wrap:wrap;
+	justify-content: space-between;
+}
+.advantage {
+	width:48%;
+	text-align:left;
+	margin-bottom:25px;
+}
+.advantage .advantage-title {
+	margin-top:0px;
+}
+.advantage > * {
+	padding:0 25px;
+}
+.advantage .advantage-image {
+	padding-top:25px;
+	margin-bottom:15px;
+}
+.advantage .advantage-description {
+	padding-bottom:25px;
+}
+

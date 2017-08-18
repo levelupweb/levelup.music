@@ -5,7 +5,10 @@ body, html {
   max-width: 100%;
   min-height: 100%;
   transition:0.2s all ease;
+<<<<<<< HEAD
   overflow-x:hidden;
+=======
+>>>>>>> b8554f3a8368109e8209cd108b6e793412214281
 }
 a {
   color: #0012ff;
