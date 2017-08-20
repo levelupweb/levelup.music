@@ -1,0 +1,91 @@
+.projects {
+	display:flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap:wrap;
+	width:100%;
+	margin-bottom:150px;
+}
+.projects .project {
+	max-width:31%;
+	width:31%;
+	min-width:200px;
+	position: relative;
+}
+.project .project-image {
+	transition: 0.2s all ease;
+	position: relative;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+.project .project-image img {
+	transition: 0.2s all ease;
+}
+.project .project-image .image-border {
+	width:90%;
+	height:90%;
+	border:1px solid rgba(255,255,255,0.3);
+	background: transparent;
+	position: absolute;
+	left:5%;
+	top:5%;
+	transition: 0.2s all ease;
+	opacity:0;
+	transform:scale(0.9);
+	z-index:40;
+}
+.project:hover .project-image .image-border {
+	transform:scale(1);
+	opacity:1;
+}
+.project .project-image .image-action {
+	opacity:0;
+	position: absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.2s all ease;
+	z-index:50;
+}
+.project:hover .project-image .image-action {
+	opacity:1;
+}
+.project .project-title {
+	cursor:pointer;
+  position: absolute;
+  bottom: -90px;
+  left: -50px;
+  max-width: 200px;
+  padding: 28px;
+  border-radius: 4px;
+  text-align: left;
+  transition: 0.2s all ease;
+}
+.project:hover .project-title {
+	left:-40px;
+	bottom:-50px;
+	box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.15);
+	background: #fff;
+}
+.project .project-title .title {
+	margin-top:0px;
+}
+.project .project-title .description {
+	color:#777;
+	opacity:0;
+	transition: 0.2s all ease;
+}
+.project:hover .project-title .description {
+	opacity:1;
+}
+.project:hover .project-image {
+	background:#0012ff;
+}
+.project:hover .project-image img {
+	opacity:0.2;
+}

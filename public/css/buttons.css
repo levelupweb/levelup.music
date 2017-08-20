@@ -1,3 +1,12 @@
+.button-group .button {
+	margin:0 5px;
+}
+.button-group .button:first-child {
+	margin-left:0;
+}
+.button-group .button:last-child {
+	margin-right:0;
+}
 .button {
 	background:#0012ff;
 	padding:12px 15px;
@@ -46,4 +55,13 @@
 	border:1px solid #0012ff;
 	background: transparent;
 	padding:5px 8px;
+}
+.button a {
+	color:#fff;
+}
+.button:hover a {
+	color:#0012ff;
+}
+.button a:after {
+	display:none;
 }

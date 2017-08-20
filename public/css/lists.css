@@ -3,7 +3,6 @@
 	margin:0px;
 	padding:0px;
 }
-<<<<<<< HEAD
 .list.with-margin {
 	padding:50px 0;
 }
@@ -75,8 +74,4 @@
 }
 .list.wide .item:last-child:after {
 	display:none;
-=======
-.list li {
-	font-weight:bold;
->>>>>>> b8554f3a8368109e8209cd108b6e793412214281
 }

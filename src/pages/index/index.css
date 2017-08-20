@@ -1,5 +1,8 @@
 .jumbotron {
 	width:100%;
+	position: absolute;
+	z-index:20;
+	top:-82px;
 }
 .jumbotron-title .title,
 .jumbotron-title img {
@@ -29,81 +32,41 @@
 .jumbotron-actions {
 	margin-top:30px;
 }
-.stages {
-	display:flex;
-	justify-content: center;
-	align-items:center;
+.first .background {
+	position: absolute;
+	left:0px;
+	top:0px;
 	width:100%;
-	margin-bottom:50px;
+	height:100%;
+	overflow:hidden;
+	z-index:10;
 }
-.stages .stage {
-	position: relative;
-	border:1px solid #000;
-	width:60px;
-	height:60px;
-	border-radius:100%;
-	display:flex;
-	justify-content: center;
-	align-items:center;
-	margin-left:70px;
-}
-.stages .stage:before {
-	content: '';
-	width:70px;
-	height:1px;
-	background: #c0c0c0;
+.first .background img {
 	position: absolute;
-	right:100%;
-	top:50%;
 }
-.stages .stage .title {
-	position: absolute;
-	right:100%;
-	margin-right:18px;
-	top:50%;
-	margin-top:-25px;
+.first .background .iphone {
+	bottom: -418px;
+  left: -33px;
 }
-.stages .stage:nth-child(2) {
-	width:80px;
-	height:80px;
-}
-.stages .stage:nth-child(3) {
-	width:90px;
-	height:90px;
-}
-.stages .stage:nth-child(4) {
-	width:110px;
-	height:110px;
-}
-.stages .stage.primary {
-	background:#0012ff;
-	border:1px solid #fff;
-}
-.stages .stage.primary .count {
-	color:#fff;
-}
-.advantages {
-	display:flex;
-	align-items:stretch;
-	flex-wrap:wrap;
-	justify-content: space-between;
-}
-.advantage {
-	width:48%;
-	text-align:left;
-	margin-bottom:25px;
-}
-.advantage .advantage-title {
-	margin-top:0px;
-}
-.advantage > * {
-	padding:0 25px;
-}
-.advantage .advantage-image {
-	padding-top:25px;
-	margin-bottom:15px;
-}
-.advantage .advantage-description {
-	padding-bottom:25px;
+.first .background .ipad {
+	top: -591px;
+  right: -499px;
 }
 
+@media screen and (max-width:846px) {
+	.first .background .ipad {
+		display:none;
+	}
+}
+@media screen and (max-width:477px) {
+	.first .background .iphone {
+		bottom: -416px;
+    left: 0px;
+    width: 100%;
+	}
+}
+@media screen and (max-width:377px) {
+	.first .background .iphone {
+		bottom: -295px;
+	}
+}

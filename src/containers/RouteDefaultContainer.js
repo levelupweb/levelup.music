@@ -8,8 +8,11 @@ const RouteDefaultContainer = ({ component }) =>
 	<Route
 		render={props => {
 			return (
-				<div className="DefaultContainer">
-					{React.createElement(component)}
+				<div className="default-container">
+					<Header />
+					<div className="site-content">
+						{React.createElement(component)}
+					</div>
 				</div>
 			);
 		}}
