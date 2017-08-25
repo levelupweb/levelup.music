@@ -6,27 +6,21 @@ const Header = props =>
 	<div className="header block">
 		<nav className="navigation">
 			<ul>
-				{/*<Link
-
-					to="/page/about">
-					<li>О нас</li>
-				</Link> */}
 				<Link
-					to="/page/partner">
-					<li>Партнерам</li>
+					to="/">
+					<li>Start Page</li>
 				</Link>
 				<Link
-					to="/page/career">
-					<li>Карьера</li>
+					to="/about">
+					<li>About</li>
 				</Link>
-				<Link
-					to="/page/team">
-					<li>Команда</li>
-				</Link>
-				<Link
-					to="/page/contact">
-					<li>Контакты</li>
-				</Link>
+				<a
+					>
+					<li>Story Book <i className="fa fa-external-link"></i></li>
+				</a>
+				<a href="https://github.com/kv9991/levelup.boilerplate.static">
+					<li>Github <i className="fa fa-external-link"></i></li>
+				</a>
 			</ul>
 			<ul className="header-logo">
 				<Link to="/">

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./burger.css";
 
 class Burger extends Component {
@@ -26,7 +26,7 @@ class Burger extends Component {
 			<div className="burger">
 				<p className="burger-revealer spacing"
 					onClick={() => { this.revealNavigation() }}>
-					{revealed ? "Закрыть меню" : "Открыть меню"}
+					{revealed ? "Close Menu" : "Open Menu"}
 				</p>
 				<nav className={revealed ? "navigation revealed" : "navigation"}>
 					<ul>
@@ -36,8 +36,15 @@ class Burger extends Component {
 							onClick={() => {
 								this.revealNavigation();
 							}} >
-							<li>Github <i className="fa fa-external-link"></i></li>
+							<li>Github <i className="fa fa-github"></i></li>
 						</a>
+						<Link
+							to="/about"
+							onClick={() => {
+								this.revealNavigation();
+							}} >
+							<li>About boilerplate</li>
+						</Link>
 					</ul>
 				</nav>
 			</div>

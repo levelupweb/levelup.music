@@ -21,7 +21,7 @@
 	position:relative;
 }
 .burger .navigation a li:after {
-	width:13px;
+	width:1px;
 	height:13px;
 	background:#000;
 	content: '';

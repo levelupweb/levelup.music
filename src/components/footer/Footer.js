@@ -1,34 +1,26 @@
 import React, { Component } from 'react';
 import './footer.css'
-import Field from '../field/Field.js';
-import Modal from '../modal/Modal.js';
-
-const subscribeModalConfiguration = {
-	title: 'Извините, в данный момент рассылка недоступна',
-	description: 'Но скоро всё обязательно вернётся! :)',
-}
-
 
 export default class Footer extends Component {
-
 	render() {
-			console.log(this.props.page)
 		if(!this.props.page) {
 			return (
-				<div className="Footer">
-					<div className="Footer-Wrapper">
-						<p className="spacing">Создано с <img alt="Любовь" src="img/like.png" width="16px" /></p>
+				<div className="footer">
+					<div className="footer-wrapper">
+						<p className="spacing">Created with love</p>
 					</div>
 				</div>
 			);
 		} else {
 			return (
-				<div className="footer page">
-					<div className="block">
-						<div className="left">
-							Создано в <a href="http://web.levelupworlds.com">Levelup Web</a> с любовью
-						</div>
-						<div className="right">
+				<div className="block">
+					<div className="footer onPage">
+						<div className="footer-wrapper">
+							<div className="left">
+								Created in <a href="http://web.levelupworlds.com">Levelup Web</a> with love
+							</div>
+							<div className="right">
+							</div>
 						</div>
 					</div>
 				</div>

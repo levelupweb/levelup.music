@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import "./index.css";
 
 const Index = props => {
@@ -6,6 +7,8 @@ const Index = props => {
 		<div>
 			<section className="fullpage center first">
 				<div className="container text">
+					<div className="blocks">
+					<div className="block">
 					<div className="jumbotron">
 						<div className="jumbotron-title">
 							<h3 className="super title">
@@ -18,8 +21,10 @@ const Index = props => {
 							</p>
 						</div>
 						<div className="jumbotron-actions">
-							<button className="button">Get Started!</button>
+							<Link to="/about"><button className="button">Get Started!</button></Link>
 						</div>
+					</div>
+					</div>
 					</div>
 				</div>
 			</section>
