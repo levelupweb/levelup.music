@@ -1,3 +1,6 @@
+.page {
+	min-height:100vh;
+}
 section {
 	padding:50px 50px;
 	margin:auto;
@@ -5,6 +8,7 @@ section {
 	border-bottom:1px solid #eee;
 	overflow:hidden;
 	position: relative;
+	width:100%;
 }	
 @media screen and (max-width:992px) {
 	section {
@@ -28,7 +32,16 @@ section.fullpage {
 	align-items:center;
 	justify-content:center;
 	flex-direction:column;
-	padding:0px 15px;
+	padding:0px 0;
+	overflow-x:hidden;
+}
+section.fullpage .container {
+	margin:70px 0;
+}
+@media screen and (max-width:576px) {
+	section.fullpage .container {
+		margin:30px 0;
+	}
 }
 section .section-background {
 	position: absolute; 
@@ -72,19 +85,43 @@ section.left {
 section .section-title {
 	text-align:center;
 	display:inline-block;
-	margin:50px 0px;
+	width:100%;
+	margin:0;
+}
+section .section-title .title {
+	margin:0!important;
+	font-weight:bold;
+
+}
+section .section-title .description {
+	font-size:20px;
+	font-weight:100;
 }
 section .section-title.left {
 	text-align: left;
 }
 section .section-actions {
 	text-align:center;
-	margin:50px 0px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap:wrap;
+	margin-top:50px;
+}
+@media screen and (max-width:567px) {
+	section .section-actions {
+		margin-top:25px;
+	}
+}
+section .section-actions > * {
+	display: block;
+	margin:5px 0px;
 }
 section .section-content {
 	width:100%;
 	text-align:center;
 	position: relative;
+	display:inline-block;
 }
 section.grey {
 	background:#fafafa;

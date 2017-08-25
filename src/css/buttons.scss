@@ -1,10 +1,15 @@
-.button-group .button {
-	margin:0 5px;
+.button-group {
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
 }
-.button-group .button:first-child {
+.button-group > * {
+	margin:5px;
+}
+.button-group > *:first-child {
 	margin-left:0;
 }
-.button-group .button:last-child {
+.button-group > *:last-child {
 	margin-right:0;
 }
 .button {
@@ -19,6 +24,20 @@
 	text-transform: uppercase;
 	vertical-align: middle;
 	cursor:pointer;
+	display:inline-block;
+}
+@media screen and (max-width: 497px) {
+	.button-group > * {
+		margin:10px 0px;
+		width:100%;
+	}
+	.button, .button.ghost {
+		display:block;
+		width:100%;
+	}
+	.button-group .button {
+		width:100%;
+	}
 }
 .button:hover {
 	border-color:#0012ff;
@@ -32,11 +51,10 @@
 }
 .button.ghost {
 	color:#000;
-	border:0px;
 	background:transparent;
 	outline:none;
 	cursor:pointer;
-	border:1px solid transparent;
+	border:1px solid #eee;
 	transition:0.2s all ease;
 }
 .button.ghost:hover {

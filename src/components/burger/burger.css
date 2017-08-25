@@ -1,0 +1,61 @@
+.burger {
+	position: fixed;
+	left:40px;
+	top:40px;
+	z-index:50;
+}
+@media screen and (max-width:498px) {
+	.burger {
+		left:30px;
+		top:30px;
+	}
+}
+.burger .navigation ul {
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+}
+.burger .navigation ul a li {
+	padding:5px 0px;
+	color:#000;
+	position:relative;
+}
+.burger .navigation a li:after {
+	width:13px;
+	height:13px;
+	background:#000;
+	content: '';
+	position: absolute;
+	left:-20px;
+	bottom:7px;
+	opacity:0;
+	transition:0.2s all ease;
+}
+.burger .navigation a li:hover:after {
+	opacity:1.0;
+}
+.burger .navigation ul a:last-child {
+	margin-right:0px
+}
+.burger .navigation {
+	margin-top:10px;
+	opacity:0;
+	visibility: hidden;
+	transition: 0.2s all ease;
+}
+.burger .navigation.revealed {
+	opacity:1.0;
+	left:42px;
+	visibility: visible;
+}
+.burger .burger-revealer {
+	cursor:pointer;
+}
+.with-menu {
+  opacity: .1;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}

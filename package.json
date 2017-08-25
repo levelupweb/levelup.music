@@ -1,6 +1,6 @@
 {
-  "name": "new",
-  "version": "0.1.0",
+  "name": "levelup.boilerplate.static",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
     "prop-types": "^15.5.10",
@@ -16,5 +16,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "sass-module-importer": "^1.4.0"
   }
 }

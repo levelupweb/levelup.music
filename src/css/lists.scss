@@ -75,3 +75,28 @@
 .list.wide .item:last-child:after {
 	display:none;
 }
+.list .item {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	margin-bottom:5px;
+}
+.list .item .content {
+	font-weight:100;
+	font-size:18px;
+}
+.list .item .icon img {
+	width:20px;
+	height:20px;
+}
+.list .item .icon {
+	min-width:40px;
+	position: relative;
+	min-height:12px;
+}
+.list .item .icon i {
+	position: absolute;
+	top:0;
+	left:0;
+	font-size:14px;
+}

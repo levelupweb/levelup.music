@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import propTypes from "prop-types";
-import Header from '../components/header/Header.js';
+import PropTypes from "prop-types";
+import Burger from '../components/burger/Burger.js';
 import './RouteDefaultContainer.css';
 
 const RouteDefaultContainer = ({ component }) =>
@@ -9,7 +9,7 @@ const RouteDefaultContainer = ({ component }) =>
 		render={props => {
 			return (
 				<div className="default-container">
-					<Header />
+					<Burger />
 					<div className="site-content">
 						{React.createElement(component)}
 					</div>
@@ -17,5 +17,9 @@ const RouteDefaultContainer = ({ component }) =>
 			);
 		}}
 	/>;
+
+RouteDefaultContainer.propTypes = {
+	component: PropTypes.func
+}
 
 export default RouteDefaultContainer;

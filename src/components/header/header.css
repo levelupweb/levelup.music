@@ -1,90 +1,40 @@
-.header {
-	position: fixed;
-	left:40px;
-	top:40px;
-	z-index:50;
-}
-@media screen and (max-width:498px) {
-	.header {
-		left:30px;
-		top:30px;
-	}
+.header .navigation {
+	border-bottom:1px solid #eee;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .header .navigation ul {
 	margin:0px;
 	padding:0px;
 	list-style-type:none;
+	display:flex;
+	flex-wrap:wrap;
+}
+.header .navigation a {
+	border-bottom: 1px solid transparent;
+  padding: 0px 8px 8px 8px;
+  transition: 0.2s all ease;
+  display:block;
+}
+.header .navigation a:hover {
+	border-color:#000;
 }
 .header .navigation ul a li {
 	padding:5px 0px;
 	color:#000;
-	text-transform:uppercase;
-	font-weight:bold;
+	font-weight:500;
 	position:relative;
 }
-.header .navigation a li:after {
-	width:13px;
-	height:13px;
-	background:#000;
-	content: '';
-	position: absolute;
-	left:-20px;
-	bottom:7px;
-	opacity:0;
-	transition:0.2s all ease;
+.header .navigation ul a li i {
+	font-size:12px;
+	vertical-align: middle;
+	opacity:.4;
 }
-.header .navigation a li:hover:after {
-	opacity:1.0;
+.header .header-logo {
+	display:block;
 }
-.header .navigation ul a:last-child {
-	margin-right:0px
-}
-.header .navigation {
-	margin-top:10px;
-	opacity:0;
-	visibility: hidden;
-	transition: 0.2s all ease;
-}
-.header .navigation.revealed {
-	opacity:1.0;
-	left:42px;
-	visibility: visible;
-}
-.header .header-revealer {
-	cursor:pointer;
-}
-.with-menu {
-  opacity: .1;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
-}
-.header.visible .navigation {
-	opacity:1;
-	visibility: visible;
-	margin-top:0;
-}
-.header.visible .header-revealer {
-	display:none;
-}
-.header.static {
-	position: static;
-}
-.header.horizontal .navigation ul {
-	display:flex;
-	flex-wrap:wrap;
-}
-.header.horizontal .navigation ul a li {
-	padding:0;
-}
-.header.horizontal .navigation ul a li:after {
-	display:none!important;
-}
-.header.horizontal .navigation ul a:after {
-	background:#000;
-}
-.header.horizontal .navigation ul a {
-	margin-right:15px;
+.header .header-logo img {
+	width:30px;
+	height:30px;
 }

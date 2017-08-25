@@ -1,14 +1,11 @@
 .fade-enter {
   opacity: 0;
   z-index: 1;
-  transform: translateY(100%);
 }
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transform: translateY(0px);
   transition: 0.5s all ease;
 }
 .fade-leave.fade-leave-active {
 	opacity:0;
-	transform: translateY(100%);
 }
