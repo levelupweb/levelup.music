@@ -1,9 +1,22 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import "./about.css";
 
 const About = props => {
 	return (
 		<div className="page-about page">
+			<Helmet>
+        <title>About This Boilerplate</title>
+        <meta name="description" content="About Boilerplate" />
+    		<meta name="keywords" content="react, express, es6, javascript, webpack" />
+    		<meta name="author" content="Levelup Web" />
+  			<meta name="robots" content="index, follow" />
+  			<meta name="revisit-after" content="1 days" />
+  			<meta property="og:type" content="website" />
+    		<meta property="og:site_name" content="Levelup Static Boilerplate" />
+    		<meta property="og:title" content="Levelup Boilerplate" />
+    		<meta property="og:description" content="This is an exprensive boilerplate for creating rich sites" />
+    	</Helmet>
 			<div className="block">
 				<div className="block-title left" id="about-us">
 					<h5 className="super title">
