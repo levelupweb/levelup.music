@@ -11,7 +11,7 @@ const RoutePageContainer = ({ component }) =>
 			return (
 				<div className="page-container">
 					<div className="site-content">
-						<div className="container text blocks">
+						<div className="container text blocks inverted">
 							<Header />
 							{React.createElement(component)}
 							<Footer page={true} />

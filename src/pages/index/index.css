@@ -1,0 +1,35 @@
+.first {
+	background: transparent;
+	z-index:10;
+}
+.logo {
+	position: fixed;
+	right:40px;
+	top:40px;
+	z-index:10;
+}
+.logo img {
+	width:35px;
+	height:35px;
+}
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 0;
+}
+@media screen and (max-width:498px) {
+	.logo {
+		top:30px;
+		right:30px;
+	}
+}
+@media screen and (max-height:568px) {
+	.jumbotron .jumbotron-title .title {
+		font-weight:100;
+		font-size:25px;
+	}
+	.jumbotron .jumbotron-actions {
+		margin-top:15px;
+	}
+}

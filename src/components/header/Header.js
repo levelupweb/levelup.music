@@ -7,24 +7,25 @@ const Header = props =>
 		<nav className="navigation">
 			<ul>
 				<Link
-					to="/">
-					<li>Start Page</li>
+					to="/about">
+					<li>О нас</li>
 				</Link>
 				<Link
-					to="/about">
-					<li>About</li>
+					to="/people">
+					<li>Участники</li>
 				</Link>
-				<a
-					>
-					<li>Story Book <i className="fa fa-external-link"></i></li>
-				</a>
-				<a href="https://github.com/kv9991/levelup.boilerplate.static">
-					<li>Github <i className="fa fa-external-link"></i></li>
-				</a>
+				<Link
+					to="/projects">
+					<li>Проекты</li>
+				</Link>
+				<Link
+					to="/people">
+					<li>Сотрудничество</li>
+				</Link>
 			</ul>
 			<ul className="header-logo">
 				<Link to="/">
-					<img src="./dist/img/logo-default.png" alt="Levelup Web"/>
+					<img src="./dist/img/logo-music-inverted.png" alt="Levelup Music"/>
 				</Link>
 			</ul>	
 		</nav>

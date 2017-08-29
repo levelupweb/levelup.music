@@ -3,19 +3,19 @@ export default new function() {
 
 	this.dev = true;
 	this.ssl = false;
-	this.port = "3000";
+	this.port = "3050";
 	this.staticFolder = "/dist"
 	this.type = this.ssl ? "https://" : "http://";
-	this.domain = this.type + "Your Domain";
+	this.domain = this.type + (this.dev ? "localhost:" + this.port : "music.levelupworlds.com");
 	this.staticURL = this.domain + this.staticFolder;
-	this.host = this.dev ? "185.22.232.114" : "127.0.0.1";
+	this.host = this.dev ? "127.0.0.1" : "185.22.232.114";
 	this.hosturl = this.type + this.host;
-	this.sitename = "Your Site Name";
-	this.token = "Your App Token";
+	this.sitename = "Levelup Music";
+	this.token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtdXNpYy5sZXZlbHVwd29ybGRzLmNvbSIsImlhdCI6MTUwMzg0MDc4MywiZXhwIjoxNTM1Mzc2NzgzLCJhdWQiOiJtdXNpYy5sZXZlbHVwd29ybGRzLmNvbSIsInN1YiI6IjE2NDYyMzg0IiwiYXBwbGljYXRpb25faWQiOiIxNjQ2MjM4NCJ9.-IlCdEQtC2LFjYHXwAsYj_sZXfB_awR7-jMpy74eSE4";
 	this.mail = new function() {
 		this.port = "3080";
 		this.sendURL = config.hosturl + ':' + this.port + '/send';
-		this.who = "Юзернейм из Levelup";
+		this.who = "Николас из Levelup Music";
 		this.to = "beatzhitta@gmail.com";
 	}
 };

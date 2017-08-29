@@ -1,0 +1,10 @@
+.socials {
+	display:inline;
+}
+.socials .social {
+	margin-left:15px;
+	display:inline-block;
+}
+.socials .social:first-child {
+	margin-left:0;
+}

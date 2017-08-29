@@ -3,20 +3,27 @@
   position:fixed;
   bottom:0px;
   left:0px;
+  z-index:10;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 .footer .footer-wrapper {
-	padding:40px;
+  padding:40px;
   display:flex;
   align-items:center;
   justify-content:center;
+  text-align:center;
 }
 @media screen and (max-width: 498px) {
-	.footer .footer-wrapper {
-		padding: 15px;
-	}
+  .footer .footer-wrapper {
+    padding: 15px;
+  }
+}
+@media screen and (max-height:568px) {
+  .footer {
+    display:none;
+  }
 }
 .footer.onPage {
   color:#444;
@@ -29,8 +36,7 @@
   justify-content: space-between;
   align-items: center;
   position: static;
-  border-top:1px solid #e1e1e1;
-  padding:13px 8px;
+  padding:13px 0;
   padding-bottom:0;
   width:100%;
 }

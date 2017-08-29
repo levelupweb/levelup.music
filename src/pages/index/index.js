@@ -1,42 +1,46 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import { Helmet } from "react-helmet";
+import BackgroundVideo from '../../components/backgroundVideo/BackgroundVideo.js'
+import config from "../../../config.js"
+import Socials from '../../components/socials/Socials.js'
 import "./index.css";
 
 const Index = props => {
 	return (
 		<div>
 			<Helmet>
-        <title>Hello World</title>
-        <meta name="description" content="Hello World Page of Levelup Boilerplate" />
-    		<meta name="keywords" content="react, express, es6, javascript, webpack" />
-    		<meta name="author" content="Levelup Web" />
-  			<meta name="robots" content="index, follow" />
-  			<meta name="revisit-after" content="1 days" />
-  			<meta property="og:type" content="website" />
-    		<meta property="og:site_name" content="Levelup Boilerplate Hello Page" />
-    		<meta property="og:title" content="Levelup Boilerplate" />
-    		<meta property="og:description" content="This is an exprensive boilerplate for creating rich sites" />
-    	</Helmet>
-			<section className="fullpage center first">
+        <title>Levelup Music</title>
+        <meta name="description" content="Levelup Music - современный музыкальный лейбл" />
+    		<meta name="keywords" content="levelup music, музыкальный лейбл" />
+  		</Helmet>
+  		<div className="video-background">
+  			<BackgroundVideo />
+			</div>
+			<div className="logo">
+				<a href="#" target="_blank">
+					<img src={config.staticURL + "/img/logo-music-inverted.png"} alt="Levelup Worlds"/>	
+				</a>
+			</div>
+			<section className="fullpage center first inverted" style={{border:0}}>
 				<div className="container text">
 					<div className="blocks">
 					<div className="block">
 					<div className="jumbotron">
 						<div className="jumbotron-title">
 							<h3 className="super title">
-								Hello World
+								Levelup Music
 							</h3>
 						</div>
 						<div className="jumbotron-content">
 							<p className="primary">
-								It is a Jumbotron. Start create your awesome application with editing this boilerplate
+								Новый музыкальный лейбл, который создаёт историю. Присоединяйся к нам, будь в тренде!
 							</p>
 						</div>
-						<div className="jumbotron-actions">
-							<Link to="/about"><button className="button">Get Started!</button></Link>
-						</div>
 					</div>
+					</div>
+					<div className="block" style={{paddingTop:0}}>
+						<Socials />
 					</div>
 					</div>
 				</div>

@@ -2,12 +2,10 @@
 .env
 # dependencies
 /node_modules
-/dist
-# testing
 /coverage
+config.js
+/dist/bundle.js
 
-# production
-/build
 
 # misc
 .DS_Store

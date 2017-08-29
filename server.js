@@ -24,6 +24,6 @@ app.get('*', (req, res) => {
 
 app.listen(config.port, err => {
   if(err) return console.log(err)
- 	console.log('-> Levelup Web on: ' + config.port);
+ 	console.log('-> Levelup Music on: ' + config.port);
  	console.log('-> Address: ' + config.domain);
 });

@@ -1,0 +1,36 @@
+
+.tv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.tv iframe {
+  width:200%!important;
+  height:200%!important;
+  left:-50%!important;
+  top:0%!important;
+}
+.tv .screen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  margin: auto;
+  opacity: 0;
+  transition: opacity .5s;
+}
+.tv .screen.active {
+  opacity: 1;
+}
+@media screen and (max-width:555px) {
+  .tv iframe {
+    width:350%!important;
+    height:350%!important;
+  }
+}

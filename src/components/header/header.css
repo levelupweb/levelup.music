@@ -1,5 +1,6 @@
 .header .navigation {
 	border-bottom:1px solid #eee;
+	border-color: #232323!important;
 	display:flex;
 	justify-content: space-between;
 	align-items: center;
@@ -13,12 +14,13 @@
 }
 .header .navigation a {
 	border-bottom: 1px solid transparent;
+	border-color:transparent!important;
   padding: 0px 8px 8px 8px;
   transition: 0.2s all ease;
   display:block;
 }
 .header .navigation a:hover {
-	border-color:#000;
+	border-color:#fff!important;
 }
 .header .navigation ul a li {
 	padding:5px 0px;
