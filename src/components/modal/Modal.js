@@ -6,11 +6,12 @@ import './modal.css'
 class Modal extends Component {
 	constructor(props) {
 		super(props);
+		this.reveal = this.reveal.bind(this)
 		this.state = {
 			isRevealed: false
 		}
 	}
-	reveal = () => {
+	reveal() {
 		this.setState({
 			isRevealed: !this.state.isRevealed
 		})

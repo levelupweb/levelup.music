@@ -1,0 +1,42 @@
+.person {
+	margin-bottom:20px;
+	padding-bottom:20px;
+	border-bottom:1px solid #333!important;
+}
+.person:last-child {
+	margin-bottom:0;
+	padding-bottom:0;
+	border:0!important;
+}
+.person-image {
+	width:100%;
+}
+.person-image img {
+	width:100%;
+}
+.person-content p,
+.person-content {
+	margin:10px 0!important;
+}
+.person-socials {
+	list-style-type: none;
+	display:flex;
+	align-items:center;
+	justify-content:flex-start;
+	flex-wrap:wrap;
+	padding:0px;
+	margin:0px;
+	opacity:.6;
+}
+.person-content h2 {
+	margin:0;
+	margin-right:15px;
+}
+.person-content .name {
+	display:flex;
+	align-items:center;
+	flex-direction:row;
+}
+.person-socials .social {
+	margin-right:10px;
+}

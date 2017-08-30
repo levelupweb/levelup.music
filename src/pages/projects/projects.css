@@ -1,0 +1,29 @@
+.project {
+	margin-bottom:20px;
+	padding-bottom:20px;
+	border-bottom:1px solid #333!important;
+}
+.project:last-child {
+	margin-bottom:0;
+	padding-bottom:0;
+	border:0!important;
+}
+.project-image {
+	width:100%;
+}
+.project-image img {
+	width:100%;
+}
+.project-content p,
+.project-content {
+	margin:10px 0!important;
+}
+.project-content h2 {
+	margin:0;
+	margin-right:15px;
+}
+.project-content .name {
+	display:flex;
+	align-items:center;
+	flex-direction:row;
+}

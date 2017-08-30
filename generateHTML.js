@@ -45,6 +45,7 @@ const generateHTML = (html, helmet) =>
       ${html}
     </noscript>
     <div id="root"></div>
+    <script src="https://www.youtube.com/player_api"></script>
     <script src="${dist}/bundle.js"></script>
    
   </body>

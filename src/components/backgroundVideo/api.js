@@ -1,53 +1,65 @@
-const tag = document.createElement('script');
-		tag.src = 'https://www.youtube.com/player_api';
-const firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-var tv;
-const	playerDefaults = {autoplay: 0, autohide: 1, modestbranding: 0, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3};
-const vid = {'videoId': 'xvU3nEK_0mg', 'startSeconds': 18, 'suggestedQuality': 'hd720'}
+const playerDefaults = {
+  autoplay: 0, 
+  autohide: 1, 
+  modestbranding: 0, 
+  rel: 0, 
+  showinfo: 0, 
+  controls: 0, 
+  disablekb: 1, 
+  enablejsapi: 0, 
+  iv_load_policy: 3
+};
 
-function onYouTubePlayerAPIReady(){
-  tv = new YT.Player('tv', {events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange}, playerVars: playerDefaults});
-}
 
-function onPlayerReady(){
-  tv.loadVideoById(vid);
-  tv.mute();
-}
-
-function onPlayerStateChange(e) {
-  const tv1 = document.getElementById('tv')
-
-  if (e.data === 1){
-    tv1.classList.add('active')
-  } else if (e.data === YT.PlayerState.ENDED){
-    tv1.classList.remove('active')
-    if(currVid === vid.length - 1){
-      currVid = 0;
-    } else {
-      currVid++;  
+export default class Video {
+  constructor(videoId, id, screen) {
+    this.tv = null;
+    this.screen = screen;
+    this.tvId = id || "tv";
+    this.onStateChange = this.onStateChange.bind(this)
+    this.play = this.play.bind(this);
+    this.createPlayer = this.createPlayer.bind(this);
+    this.rescale = this.rescale.bind(this)
+    this.video = {
+      'videoId': videoId, 
+      'startSeconds': 18, 
+      'suggestedQuality': 'hd720'
     }
-    tv.loadVideoById(vid);
+  }
+  createPlayer(options) {
+    const self = this;
+    this.tv = new YT.Player('tv', {events: {
+      'onReady': this.play, 
+      'onStateChange': this.onStateChange
+    }, playerVars: options});
+  }
+  play() {
+    this.tv.loadVideoById(this.video);
+    this.tv.mute();
+  }
+  rescale() {
+    const w = window.innerWidth + 400;
+    const h = window.innerHeight + 400;
+    const screen = document.querySelector(this.screen);
+    const tv1 = document.getElementById(this.tvId)
+
+    if (w/h > 16/9) {
+      this.tv.setSize(w, w/16*9);
+    } else {
+      this.tv.setSize(h/9*16, h);
+    }
+  }
+  onStateChange(e) {
+    const tv1 = document.getElementById(this.tvId)
+    if (e.data === 1){
+      tv1.classList.add('active')
+    } else if (e.data === YT.PlayerState.ENDED) {
+      tv1.classList.remove('active')
+      this.tv.loadVideoById(vid);
+    }
+  }
+  init() {
+    this.createPlayer(playerDefaults);
+    this.rescale();
   }
 }
-
-function vidRescale(){
-  const w = window.innerWidth+400,
-    h = window.innerHeight+400;
-  const screen = document.querySelector('.tv .screen');
-  const tv1 = document.getElementById('tv')
-
-  if (w/h > 16/9){
-    tv.setSize(w, w/16*9);
-  } else {
-    tv.setSize(h/9*16, h);
-  }
-}
-
-window.addEventListener('load', function(){
-  onYouTubePlayerAPIReady()
-  vidRescale();
-});
-window.addEventListener('resize', function(){
-  vidRescale();
-});

@@ -56,7 +56,7 @@ class Burger extends Component {
 							<li>Проекты</li>
 						</Link>
 						<Link
-							to="/partner"
+							to="/contact"
 							onClick={() => {
 								this.revealNavigation();
 							}} >
@@ -68,6 +68,13 @@ class Burger extends Component {
 								this.revealNavigation();
 							}} >
 							<li>Участники</li>
+						</Link>
+						<Link
+							to="/studio"
+							onClick={() => {
+								this.revealNavigation();
+							}} >
+							<li>Студия</li>
 						</Link>
 					</ul>
 				</nav>

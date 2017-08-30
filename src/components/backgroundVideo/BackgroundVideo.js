@@ -1,5 +1,6 @@
 import React from 'react';
 import "./backgroundVideo.css";
+import Video from './api.js';
 
 
 export default class BackgroundVideo extends React.Component {
@@ -9,7 +10,12 @@ export default class BackgroundVideo extends React.Component {
   }
 
   componentDidMount() {
-		require("./api.js")
+    const video = new Video("xvU3nEK_0mg", "tv", ".tv .screen")
+    video.init()
+  }
+
+  componentWillReceiveProps() {
+    console.log('updated')
   }
 
   render() {

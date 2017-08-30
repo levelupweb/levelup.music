@@ -21,13 +21,16 @@ class Mail {
 			const { success, message } = response.data;
 			console.log(response)	
 		if(success) {
-				return NotificationManager.success(message, 'Успех');
+				return true
+				NotificationManager.success(message, 'Успех');
 			} else {
-				return NotificationManager.error(message, 'Ошибка');
+				return false;
+				NotificationManager.error(message, 'Ошибка');
 			}
 		}).catch((err) => {
 			console.log(err)
-			return NotificationManager.error('Ошибка клиента', 'Ошибка');
+			NotificationManager.error('Ошибка клиента', 'Ошибка');
+			return false
 		})
 	}
 }

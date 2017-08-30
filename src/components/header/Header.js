@@ -19,8 +19,12 @@ const Header = props =>
 					<li>Проекты</li>
 				</Link>
 				<Link
-					to="/people">
+					to="/contact">
 					<li>Сотрудничество</li>
+				</Link>
+				<Link
+					to="/studio">
+					<li>Студия</li>
 				</Link>
 			</ul>
 			<ul className="header-logo">

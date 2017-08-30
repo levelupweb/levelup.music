@@ -34,7 +34,7 @@ class ContactForm extends React.Component {
 			hidden={item.hidden || false} />
 		)
 	}
-	updateForm = (key, fieldName, value) => {
+	updateForm(key, fieldName, value) {
 		this.setState({
 			message: {
 				...this.state.message,
