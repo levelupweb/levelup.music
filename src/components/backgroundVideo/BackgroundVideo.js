@@ -14,9 +14,6 @@ export default class BackgroundVideo extends React.Component {
     video.init()
   }
 
-  componentWillReceiveProps() {
-    console.log('updated')
-  }
 
   render() {
     return (

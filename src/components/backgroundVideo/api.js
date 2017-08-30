@@ -59,7 +59,7 @@ export default class Video {
     }
   }
   init() {
-    this.createPlayer(playerDefaults);
+    window.onYouTubePlayerAPIReady = this.createPlayer(playerDefaults);
     this.rescale();
   }
 }
