@@ -21,11 +21,11 @@ class Mail {
 			const { success, message } = response.data;
 			console.log(response)	
 		if(success) {
-				return true
 				NotificationManager.success(message, 'Успех');
+				return true
 			} else {
-				return false;
 				NotificationManager.error(message, 'Ошибка');
+				return false;
 			}
 		}).catch((err) => {
 			console.log(err)
