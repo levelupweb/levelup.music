@@ -1,0 +1,13 @@
+.fluid {
+	width:100%;
+}
+.fluid input {
+	width:100%;
+}
+
+.contact-form-error, 
+.contact-form-errors {
+	margin:20px 0;
+	border-left: 4px solid red;
+  border-color: #8c2929!important;
+}

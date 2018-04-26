@@ -1,0 +1,28 @@
+.inner-content {
+  min-height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.page-container {
+  background: #000;
+  color:#fff;
+}
+
+.page {
+  padding-top:90px;
+  padding-bottom:70px;
+}
+
+.page p {
+  color:#fff;
+}
+
+.inner-content a {
+  color:#c0c0c0!important;
+}
+
+body, html {
+  background:#000!important;
+}

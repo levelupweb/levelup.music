@@ -1,0 +1,6 @@
+.default-container {
+	position: relative;
+}
+.site-content {
+	transition:0.2s all ease;
+}

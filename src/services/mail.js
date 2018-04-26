@@ -1,38 +1,28 @@
-import { axiosAuth } from './axios.js';
 import { NotificationManager } from 'react-notifications';
-import config from '../../config.js'
+import axios from 'axios';
+import config from '../utils/config';
 
-class Mail {
-	constructor(subject) {
-		this.subject = subject;
-	}
-	dispatchSend(html) {
-		const { who, to, sendURL } = config.mail
-		return axiosAuth({
-			method: "POST",
-			url: sendURL,
-			data: {
-				subject: this.subject,
-				html,
-				who,
-				to
-			}
-		}).then((response) => {
-			const { success, message } = response.data;
-			console.log(response)	
-		if(success) {
-				NotificationManager.success(message, 'Успех');
-				return true
-			} else {
-				NotificationManager.error(message, 'Ошибка');
-				return false;
-			}
-		}).catch((err) => {
-			console.log(err)
-			NotificationManager.error('Ошибка клиента', 'Ошибка');
-			return false
-		})
-	}
-}
-
-export default Mail;
+export default (data, url) => axios({
+  method: 'POST',
+  url: config.domain + url,
+  data,
+})
+  .then(({ data }) => {
+    if (data.isSended) {
+      NotificationManager.success('Сообщение успешно отправлен', 'Успех');
+      return Promise.resolve();
+    }
+    NotificationManager.error('Сообщение успешно отправлен', 'Ошибка');
+    return Promise.reject();
+  })
+  .catch((err) => {
+    if (err.response && err.response.status === 422) {
+      NotificationManager.error('Пожалуйста, заполните форму правильными данными', 'Ошибка');
+      return Promise.reject(err);
+    }
+    if (err.response && err.response.data === 'string') {
+      NotificationManager.error(err.response.data, 'Ошибка');
+      return Promise.reject(err);
+    }
+    return Promise.reject(err);
+  });

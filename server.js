@@ -1,29 +1,51 @@
-import express from 'express';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import StaticRouter from 'react-router-dom/StaticRouter';
-import App from './src/components/app/App.js'
-import generateHTML from './generateHTML.js'
-import path from 'path'
-import { Helmet } from 'react-helmet'
-import config from './config.js'
+const fs = require('fs');
+const path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const config = require('./config').server;
+const { checkContactData, emailContactHandler } = require('./emailContact');
+
+const React = require('react');
+const { renderToString } = require('react-dom/server'); 
+const { Helmet } = require('react-helmet');
+const StaticRouter = require('react-router-dom/StaticRouter').default; // es6 hack
+const App = require('./src/components/app/').default; // es6 hack
+const document = require('./document'); 
+
+const https = require('https');
+const http = require('http');
+
+const key = fs.readFileSync('ssl/key.key', 'utf8');
+const cert = fs.readFileSync('ssl/cert.crt', 'utf8');
 
 const app = express();
 
-app.use(config.staticFolder, express.static(__dirname + config.staticFolder));
+app.use(config.static, express.static(path.join(__dirname, config.static)));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get('*', (req, res) => {
-	const html = renderToString(
-    <StaticRouter location={req.url} context={{}}>
-      <App />
-    </StaticRouter>
-  )
-  const helmet = Helmet.renderStatic();
-	res.send(generateHTML(html, helmet));
+  const html = renderToString(React.createElement(StaticRouter, {
+    location: req.url,
+    context: {},
+    children: React.createElement(App, {}),
+  }));
+
+  res.send(document(html, Helmet.renderStatic()));
 });
 
-app.listen(config.port, err => {
-  if(err) return console.log(err)
- 	console.log('-> Levelup Music on: ' + config.port);
- 	console.log('-> Address: ' + config.domain);
+app.post(config.contactposturl, [...checkContactData], emailContactHandler);
+
+let server;
+
+if (process.env.SSL === 'true') {
+  server = https.createServer({ key, cert }, app);
+} else {
+  server = http.createServer(app);
+}
+
+server.listen(config.port, (err) => {
+  if (err) return console.log(err);
+ 	console.log(`-> Levelup Music on: ${config.port}`);
+ 	console.log(`-> Address: ${config.hosturl}`);
 });

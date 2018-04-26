@@ -4,62 +4,61 @@ const playerDefaults = {
   modestbranding: 0, 
   rel: 0, 
   showinfo: 0, 
+  loop: 1,
   controls: 0, 
   disablekb: 1, 
   enablejsapi: 0, 
   iv_load_policy: 3
 };
 
-
 export default class Video {
-  constructor(videoId, id, screen) {
-    this.tv = null;
+  constructor(options, id, screen) {
+    this.player = null;
     this.screen = screen;
-    this.tvId = id || "tv";
-    this.onStateChange = this.onStateChange.bind(this)
+    this.options = options;
+    this.id = id;
     this.play = this.play.bind(this);
     this.createPlayer = this.createPlayer.bind(this);
-    this.rescale = this.rescale.bind(this)
-    this.video = {
-      'videoId': videoId, 
-      'startSeconds': 18, 
-      'suggestedQuality': 'hd720'
-    }
+    this.rescale = this.rescale.bind(this);
   }
-  createPlayer(options) {
-    const self = this;
-    this.tv = new YT.Player('tv', {events: {
-      'onReady': this.play, 
-      'onStateChange': this.onStateChange
-    }, playerVars: options});
+
+  init() {
+    this.createPlayer();
+    this.rescale();
+    this.play();
   }
+
+  createPlayer() {
+    const yt = require("youtube-player");
+    this.player = yt(this.id, {...playerDefaults, ...this.options});
+  }
+
   play() {
-    this.tv.loadVideoById(this.video);
-    this.tv.mute();
+    this.player.loadVideoById({...playerDefaults, ...this.options});
+    this.player.playVideo()
+      .then(() => {
+        document.getElementById(this.id).classList.add('active');
+      });
+    this.player.mute();
+
+    this.player.on("stateChange", (e) => {
+      if (e.data === YT.PlayerState.ENDED) {
+          this.player.playVideo({...playerDefaults, ...this.options}); 
+          this.player.seekTo(this.options.startSeconds);
+      }
+    })
   }
+
   rescale() {
     const w = window.innerWidth + 400;
     const h = window.innerHeight + 400;
     const screen = document.querySelector(this.screen);
-    const tv1 = document.getElementById(this.tvId)
+    const tv1 = document.getElementById(this.id)
 
     if (w/h > 16/9) {
-      this.tv.setSize(w, w/16*9);
+      this.player.setSize(w, w/16*9);
     } else {
-      this.tv.setSize(h/9*16, h);
+      this.player.setSize(h/9*16, h);
     }
-  }
-  onStateChange(e) {
-    const tv1 = document.getElementById(this.tvId)
-    if (e.data === 1){
-      tv1.classList.add('active')
-    } else if (e.data === YT.PlayerState.ENDED) {
-      tv1.classList.remove('active')
-      this.tv.loadVideoById(vid);
-    }
-  }
-  init() {
-    window.onYouTubePlayerAPIReady = this.createPlayer(playerDefaults);
-    this.rescale();
   }
 }

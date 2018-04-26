@@ -4,18 +4,23 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "emailjs": "^2.0.0",
+    "express-validator": "^5.1.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-helmet": "^5.1.3",
+    "react-notifications": "^1.4.3",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
-    "react-notifications": "^1.4.3",
     "react-scripts": "1.0.11",
-    "switch-css-transition-group": "^0.1.2"
+    "switch-css-transition-group": "^0.1.2",
+    "youtube-player": "^5.5.0"
   },
   "scripts": {
-    "production": "sudo forever run.js &",
+    "production": "sudo pm2 start run.js --name='music.levelupworlds.com'",
     "server": "nodemon run.js",
     "dev": "webpack --watch",
     "build": "webpack"
