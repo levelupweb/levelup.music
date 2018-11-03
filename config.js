@@ -16,7 +16,6 @@ const contactposturl = "/email/contact";
 
 module.exports.server = {
   dev,
-  ssl,
   port,
   domain,
   static: staticfolder,
@@ -33,7 +32,6 @@ module.exports.server = {
 
 module.exports.client = {
   dev,
-  ssl,
   port,
   emailurl,
   contactposturl,
